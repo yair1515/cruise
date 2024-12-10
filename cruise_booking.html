@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טופס הזמנת קרוז</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>טופס הזמנת קרוז</h1>
+        <form id="cruiseForm" action="mailto:yair1515@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label>שם מלא <span class="required">*</span></label>
+                <input type="text" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label>מספר טלפון <span class="required">*</span></label>
+                <input type="tel" name="phone" required pattern="[0-9]{9,10}" placeholder="הכנס מספר טלפון">
+            </div>
+
+            <div class="form-group">
+                <label>כתובת אימייל <span class="required">*</span></label>
+                <input type="email" name="email" required placeholder="your@email.com">
+            </div>
+
+            <div class="form-group">
+                <label>חברת קרוזים <span class="required">*</span></label>
+                <select name="cruiseLine" required>
+                    <option value="">בחר חברת קרוזים</option>
+                    <option value="royal">Royal Caribbean - רויאל קריביאן</option>
+                    <option value="norwegian">Norwegian Cruise Line - נורוויג'ן</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>שם האונייה <span class="required">*</span></label>
+                <select name="shipName" required>
+                    <option value="">בחר אונייה</option>
+                    <optgroup label="Royal Caribbean">
+                        <option value="icon">Icon of the Seas (החדשה ביותר)</option>
+                        <option value="utopia">Utopia of the Seas (2024)</option>
+                        <option value="wonder">Wonder of the Seas</option>
+                        <option value="symphony">Symphony of the Seas</option>
+                        <option value="harmony">Harmony of the Seas</option>
+                        <option value="oasis">Oasis of the Seas</option>
+                        <option value="allure">Allure of the Seas</option>
+                        <option value="anthem">Anthem of the Seas</option>
+                        <option value="odyssey">Odyssey of the Seas</option>
+                        <option value="quantum">Quantum of the Seas</option>
+                        <option value="spectrum">Spectrum of the Seas</option>
+                    </optgroup>
+                    <optgroup label="Norwegian Cruise Line">
+                        <option value="viva">Norwegian Viva (החדשה ביותר)</option>
+                        <option value="prima">Norwegian Prima</option>
+                        <option value="encore">Norwegian Encore</option>
+                        <option value="bliss">Norwegian Bliss</option>
+                        <option value="joy">Norwegian Joy</option>
+                        <option value="escape">Norwegian Escape</option>
+                        <option value="getaway">Norwegian Getaway</option>
+                        <option value="breakaway">Norwegian Breakaway</option>
+                        <option value="epic">Norwegian Epic</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>שנת הפלגה <span class="required">*</span></label>
+                <select name="cruiseYear" required>
+                    <option value="">בחר שנה</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>חודש מבוקש להפלגה <span class="required">*</span></label>
+                <select name="cruiseMonth" required>
+                    <option value="">בחר חודש</option>
+                    <option value="ינואר">ינואר</option>
+                    <option value="פברואר">פברואר</option>
+                    <option value="מרץ">מרץ</option>
+                    <option value="אפריל">אפריל</option>
+                    <option value="מאי">מאי</option>
+                    <option value="יוני">יוני</option>
+                    <option value="יולי">יולי</option>
+                    <option value="אוגוסט">אוגוסט</option>
+                    <option value="ספטמבר">ספטמבר</option>
+                    <option value="אוקטובר">אוקטובר</option>
+                    <option value="נובמבר">נובמבר</option>
+                    <option value="דצמבר">דצמבר</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>מספר נוסעים בחדר <span class="required">*</span></label>
+                <input type="number" name="passengers" min="1" max="4" required>
+            </div>
+
+            <div class="form-group">
+                <label>דרישות מיוחדות</label>
+                <textarea name="specialRequests" placeholder="נא לציין דרישות מיוחדות כגון: תזונה מיוחדת, נגישות, או כל בקשה אחרת"></textarea>
+            </div>
+
+            <button type="submit">שלח טופס</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('cruiseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            let emailBody = '';
+            for (let [key, value] of formData.entries()) {
+                emailBody += `${key}: ${value}\n`;
+            }
+            
+            // Create mailto link with form data
+            const mailtoLink = `mailto:yair1515@gmail.com?subject=הזמנת קרוז חדשה&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+            
+            //alert('הטופס נשלח בהצלחה! המידע יישלח לכתובת המייל שלך.');
+        });
+    </script>
+</body>
+</html>
